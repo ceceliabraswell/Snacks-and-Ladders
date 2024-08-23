@@ -24,7 +24,7 @@ for (let i = 1; i <= 100; i++) {
   document.getElementById("board").appendChild(board);
 }
 
-function play(player, psum, correction, num) {
+const play = (player, psum, correction, num) => {
   let sum;
   if (psum == "p1sum") {
     p1sum = p1sum + num;
@@ -190,21 +190,79 @@ function play(player, psum, correction, num) {
   }
 }
 
-document.getElementById("diceBtn").addEventListener("click", function () {
-  rollingSound.play(); //  plays audio when button is clicked.
-  num = Math.floor(Math.random() * 6 + 1); //generates a number between 1 to 6, like a dice.
-  document.getElementById("dice").innerText = num;
+// document.getElementById("diceBtn").addEventListener("click", function () {
+//   rollingSound.play(); //  plays audio when button is clicked.
+//   num = Math.floor(Math.random() * 6 + 1); //generates a number between 1 to 6, like a dice.
+//   document.getElementById("dice").innerText = num;
 
-  if (tog % 2 != 0) {
-    // if returned value is not equal to 0, yellow moves.
-    document.getElementById("tog").innerText = "Yellow's Turn : ";
-    play("p1", "p1sum", 0, num);
-  } else if (tog % 2 == 0) {
-    // if returned value is equal to 0, red moves.
-    document.getElementById("tog").innerText = "Red's Turn : ";
+//   if (tog % 2 != 0) {
+//     // if returned value is not equal to 0, yellow moves.
+//     document.getElementById("tog").innerText = "Yellow's Turn : ";
+//     play("p1", "p1sum", 0, num);
+//   } else if (tog % 2 == 0) {
+//     // if returned value is equal to 0, red moves.
+//     document.getElementById("tog").innerText = "Red's Turn : ";
 
-    play("p2", "p2sum", 55, num);
+//     play("p2", "p2sum", 55, num);
+//   }
+
+//   tog = tog + 1;
+// });
+
+
+
+// rolling dice code
+const dice = document.querySelector('.dice');
+const rollBtn = document.querySelector('.roll');
+
+const randomDice = () => { 
+  const random = Math.floor(Math.random() * 6 + 1);
+
+  if (random >= 1 && random <= 6) {
+    rollDice(random);
   }
+  else {
+    randomDice();
+  }
+  
+}
 
-  tog = tog + 1;
-});
+const rollDice = random => {
+  dice.style.animation = 'rolling 4s';
+
+  setTimeout(() => {
+    switch (random) {
+      case 1:
+        dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        break;
+      
+      case 6:
+        dice.style.transform = 'rotateX(180deg) rotateY(0deg)';
+        break;
+        
+      case 2:
+        dice.style.transform = 'rotateX(-90deg) rotateY(0deg)';
+        break;
+      
+      case 5:
+        dice.style.transform = 'rotateX(90deg) rotateY(0deg)';
+        break;
+      
+      case 3:
+        dice.style.transform = 'rotateX(0deg) rotateY(90deg)';
+        break;
+
+      case 4:
+        dice.style.transform = 'rotateX(0deg) rotateY(-90deg)';
+        break;
+
+      default:
+        break;
+    }
+
+    dice.style.animation = 'none';
+
+  }, 4050)
+}
+
+rollBtn.addEventListener('click', randomDice);

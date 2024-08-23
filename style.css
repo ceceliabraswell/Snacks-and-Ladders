@@ -17,9 +17,9 @@ body {
 }
 
 /* dice testing */
-.dice {
-  transform: rotateX(90deg) rotateY(90deg);
-}
+/* .dice {
+  transform: rotateX(0deg) rotateY(-90deg);
+} */
 
 /* dice styles */
 
@@ -29,14 +29,13 @@ body {
   height: 100px;
   transform-style: preserve-3d;
   transition: 1s ease;
-  transform: rotateX(45deg) rotateY(45deg);
 }
 
-/* @keyframes rolling {
+@keyframes rolling {
   50% {
-    transform: rotateX(455deg);
+    transform: rotateX(455deg) rotateY(455deg);
   }
-} */
+}
 
 .face {
   position: absolute;
@@ -115,10 +114,45 @@ body {
 }
 
 .bottom::after {
-  
+  margin: -36px 0 0 -36px;
+  box-shadow: 26px 26px,
+              52px 52px,
+              52px 0,
+              0 52px;
 }
 
+.right::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 0,
+              0 40px,
+              40px 40px;
+}
 
+.left::after {
+  margin: -35px 0 0 -35px;
+  box-shadow: 25px 25px,
+              50px 50px;
+}
+
+/*
+    Roll Button styles
+*/
+
+.roll {
+  cursor: pointer;
+  color: #b33951;
+  margin-top: 60px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  font: 700 16px 'Montserrat';
+  border: 2px solid #b33951;
+  transition: .4s;
+}
+
+.roll:hover {
+  color: #fff;
+  background: #b33951;
+}
 
 #board {
     display: grid;
