@@ -10,6 +10,7 @@ body {
     background-image: url(images/grass-background.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    font-weight: 600;
 }
 
 #tog {

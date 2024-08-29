@@ -19,5 +19,5 @@ Play the classic Snakes and Ladders board game, but now adapted for the computer
 I learned how to dynamically render divs onto the page by using a for loop. The most difficult part about this for loop, was that I had to add a paragraph tab, with a class, tag to one specific div to create the board pieces. I ended up using ChatGPT to help me figure out the solution, which involved using an if statement and appendChild.
 
 <div align="center">
-    Play the actual game <a href="https://ceceliabraswell.github.io/snakes-and-ladders/">here</a>!
+    Play the game <a href="https://ceceliabraswell.github.io/snakes-and-ladders/">here</a>!
 </div>

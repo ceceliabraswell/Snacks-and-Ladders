@@ -190,6 +190,9 @@ const play = (player, psum, correction, num) => {
   }
 }
 
+// const dice = document.querySelector('.dice');
+// const rollBtn = document.querySelector('.roll');
+
 // document.getElementById("diceBtn").addEventListener("click", function () {
 //   rollingSound.play(); //  plays audio when button is clicked.
 //   num = Math.floor(Math.random() * 6 + 1); //generates a number between 1 to 6, like a dice.
@@ -212,26 +215,91 @@ const play = (player, psum, correction, num) => {
 
 
 // rolling dice code
-const dice = document.querySelector('.dice');
-const rollBtn = document.querySelector('.roll');
 
-const randomDice = () => { 
-  const random = Math.floor(Math.random() * 6 + 1);
+// const randomDice = () => { 
+//   const random = Math.floor(Math.random() * 6 + 1);
 
-  if (random >= 1 && random <= 6) {
-    rollDice(random);
-  }
-  else {
-    randomDice();
-  }
+//   if (random >= 1 && random <= 6) {
+//     rollDice(random);
+//   }
+//   else {
+//     randomDice();
+//   }
   
-}
+// }
 
-const rollDice = random => {
-  dice.style.animation = 'rolling 4s';
+// const rollDice = random => {
+//   dice.style.animation = 'rolling 4s';
+
+//   setTimeout(() => {
+//     switch (random) {
+//       case 1:
+//         dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+//         break;
+      
+//       case 6:
+//         dice.style.transform = 'rotateX(180deg) rotateY(0deg)';
+//         break;
+        
+//       case 2:
+//         dice.style.transform = 'rotateX(-90deg) rotateY(0deg)';
+//         break;
+      
+//       case 5:
+//         dice.style.transform = 'rotateX(90deg) rotateY(0deg)';
+//         break;
+      
+//       case 3:
+//         dice.style.transform = 'rotateX(0deg) rotateY(90deg)';
+//         break;
+
+//       case 4:
+//         dice.style.transform = 'rotateX(0deg) rotateY(-90deg)';
+//         break;
+
+//       default:
+//         break;
+//     }
+
+//     dice.style.animation = 'none';
+
+//   }, 4050)
+// }
+
+// rollBtn.addEventListener('click', randomDice);
+
+
+
+
+
+// test code
+
+const dice = document.querySelector('.dice');
+
+document.getElementById("diceBtn").addEventListener("click", function () {
+  rollingSound.play(); //  plays audio when button is clicked.
+  const num = Math.floor(Math.random() * 6 + 1); //generates a number between 1 to 6, like a dice.
+
+  if (tog % 2 != 0) {
+    // if returned value is not equal to 0, yellow moves.
+    document.getElementById("tog").innerHTML = `<span style="color:yellow;">${"Yellow's Turn : "}</span>`;
+    play("p1", "p1sum", 0, num);
+  } else if (tog % 2 == 0) {
+    // if returned value is equal to 0, red moves.
+    document.getElementById("tog").innerHTML = `<span style="color:red;">${"Red's Turn : "}</span>`;
+    play("p2", "p2sum", 55, num);
+  }
+
+  tog = tog + 1;
+
+  rollDice(num)
+});
+
+const rollDice = num => {
+  dice.style.animation = 'rolling 2s';
 
   setTimeout(() => {
-    switch (random) {
+    switch (num) {
       case 1:
         dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
         break;
@@ -262,7 +330,5 @@ const rollDice = random => {
 
     dice.style.animation = 'none';
 
-  }, 4050)
+  }, 500)
 }
-
-rollBtn.addEventListener('click', randomDice);
