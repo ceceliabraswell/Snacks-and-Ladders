@@ -4,7 +4,7 @@ A JavaScript computer game I built to further develop my knowledge and skills.
 
 ## What is Snakes and Ladders?
 
-Play the classic Snakes and Ladders board game, but now adapted for the computer screen. This two person game is red versus yellow. Click the 'Roll Dice' button to generate a random number between 1 to 6 to determine how many squares your piece moves. Land on a square containing the end of the ladder and advance to the top of the ladder. Land on a square with a snake head, and slide back down the board to the end of the ladder. Containing 100 board squares to advance across, be the first person to reason the final square to win.
+Play the classic Snakes and Ladders board game, but now adapted for the computer screen. This two person game is red versus yellow. Click the 'Roll Dice' button to generate a random number between 1 to 6 to determine how many points you earn and how many squares you advance on the board. Land on a square containing the end of the ladder and advance to the top of the ladder. Land on a square with a snake head, and slide back down the board to the end of the ladder. Be the first person to collect exactly 100 points to reach the end of the board and win.
 
 ![Screen shot of Snakes and Ladders game.](./images/screenshot.png)
 

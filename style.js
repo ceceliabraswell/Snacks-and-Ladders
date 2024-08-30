@@ -153,7 +153,7 @@ const play = (player, psum, correction, num) => {
     } else if (player == "p2") {
       alert("Yellow Won !!");
     }
-    location.reload();
+    // location.reload();
   } else {
     numarr = Array.from(String(sum));
     n1 = eval(numarr.shift());
@@ -188,6 +188,8 @@ const play = (player, psum, correction, num) => {
       }
     }
   }
+
+  console.log(sum)
 }
 
 // const dice = document.querySelector('.dice');

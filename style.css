@@ -140,19 +140,21 @@ body {
 */
 
 .roll {
+  z-index: 99;
+  margin-top: 50px;
+  padding: 10px 5px;
+  width: 200px;
+  border-radius: 5px;
   cursor: pointer;
-  color: #b33951;
-  margin-top: 60px;
-  padding: 6px 12px;
-  border-radius: 3px;
+  color: #3d39b3;
   font: 700 16px 'Montserrat';
-  border: 2px solid #b33951;
+  border: 2px solid #3d39b3;
   transition: .4s;
 }
 
 .roll:hover {
   color: #fff;
-  background: #b33951;
+  background: #3d39b3;
 }
 
 #board {
@@ -209,17 +211,6 @@ img {
     z-index: 99;
 }
 
-#diceBtn {
-    margin-top: 16px;
-    z-index: 99;
-    padding: 10px 5px;
-    cursor: pointer;
-    background-color: rgb(75, 140, 197);
-    border-radius: 5px;
-    width: 200px;
-    margin-top: 50px;
-}
-
 @media (max-width: 1250px) {
     
     #diceCount {
@@ -229,7 +220,7 @@ img {
       left: 36vw;
       border: 2px solid red;
     }
-    #diceBtn {
+    .roll {
       width: 200px;
       margin-left: 20px;
     }
@@ -241,9 +232,8 @@ img {
       place-items: none;
       top: 99vh;
       left: 10vw;
-      /* border: 2px solid red; */
     }
-    #diceBtn {
+    .roll {
       width: 200px;
       margin-left: 20px;
     }
